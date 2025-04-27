@@ -23,13 +23,13 @@ public class CreateTodo implements ICreateTodo {
             return new Output("Todo invalido", todo);
         }
 
-        Todo createTodo = this.todoRepository.insertTodo(todo);
+        Todo createdTodo = this.todoRepository.insertTodo(todo);
 
-        if (! createTodo.isCorrectlyInserted()) {
+        if (! createdTodo.isCorrectlyInserted()) {
             return new Output("Todo não inserido", todo);
         }
 
-        return new Output("Todo criado, Id: " + createTodo.getId() + ".",createTodo);
+        return new Output("Todo criado, Id: " + createdTodo.getId() + ".", createdTodo);
         
     }
 
