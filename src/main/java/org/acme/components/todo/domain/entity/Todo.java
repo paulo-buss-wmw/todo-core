@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Todo {
 
-    private Long id;
+    private String id;
     private String name;
     private LocalDate limitDate;
     private boolean done;
@@ -12,16 +12,23 @@ public class Todo {
     public Todo() {
     }
 
+    public Todo(String id, String name, LocalDate limitDate, boolean done) {
+        this.id = id;
+        this.name = name;
+        this.limitDate = limitDate;
+        this.done = done;
+    }
+
     public Todo(String name, LocalDate limitDate) {
         this.name = name;
         this.limitDate = limitDate;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -54,7 +61,7 @@ public class Todo {
     }
 
     public boolean isCorrectlyInserted() {
-        return this.id != null && this.id > 0;
+        return this.id != null && ! this.id.isEmpty();
     }
 
     public static Todo createDefaultTodo(String name, LocalDate limitDate) {

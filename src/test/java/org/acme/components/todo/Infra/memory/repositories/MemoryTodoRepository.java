@@ -20,7 +20,7 @@ public class MemoryTodoRepository implements ITodoRepository {
     @Override
     public Todo insertTodo(Todo todo) {
         Todo createdTodo = new Todo();
-        createdTodo.setId(1L);
+        createdTodo.setId("1L");
         createdTodo.setName(todo.getName());
         createdTodo.setLimitDate(todo.getLimitDate());
         createdTodo.setDone(todo.isDone());

@@ -20,16 +20,16 @@ public class CreateTodo implements ICreateTodo {
         Todo todo = Todo.createDefaultTodo(input.name(), LocalDate.parse(input.limitDate()));
 
         if (! todo.isValid()) {
-            return new Output("Todo invalido");
+            return new Output("Todo invalido", todo);
         }
 
-        todo = this.todoRepository.insertTodo(todo);
+        Todo createTodo = this.todoRepository.insertTodo(todo);
 
-        if (! todo.isCorrectlyInserted()) {
-            return new Output("Todo não inserido");
+        if (! createTodo.isCorrectlyInserted()) {
+            return new Output("Todo não inserido", todo);
         }
 
-        return new Output("Todo criado.");
+        return new Output("Todo criado, Id: " + createTodo.getId() + ".",createTodo);
         
     }
 
