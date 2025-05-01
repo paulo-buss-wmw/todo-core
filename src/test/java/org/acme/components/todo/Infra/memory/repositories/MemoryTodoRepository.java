@@ -28,10 +28,13 @@ public class MemoryTodoRepository implements ITodoRepository {
         todos.add(createdTodo);
 
         return createdTodo;
+    }
+
+    @Override
+    public List<Todo> getAll() {
+        return todos;
     };
 
-    public List<Todo> getTodos() {
-        return todos;
-    }
+    
 
 }
