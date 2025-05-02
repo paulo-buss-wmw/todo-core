@@ -20,14 +20,14 @@ class ListTodoTest {
     @Test
     void testRightExecute() {
         IListTodo listTodo = new ListTodo(this.todoRepository);
-        Output output = listTodo.execute(new IListTodo.Input());
+        Output output = listTodo.execute(new IListTodo.Input(null));
         Assertions.assertEquals(0, output.todos().size()); 
 
         ICreateTodo createTodo = new CreateTodo(this.todoRepository);
         createTodo.execute(new ICreateTodo.Input("Fazer café", "2025-04-21"));
 
-        Output secondOutput = listTodo.execute(new IListTodo.Input());
-        Assertions.assertEquals(1, output.todos().size()); 
+        Output secondOutput = listTodo.execute(new IListTodo.Input(null));
+        Assertions.assertEquals(1, secondOutput.todos().size()); 
 
     }
 

@@ -25,7 +25,7 @@ public class TodoController {
 
     public List<Todo> listTodo() {
         IListTodo listTodo = new ListTodo(iTodoRepository);
-        IListTodo.Output output = listTodo.execute(new IListTodo.Input());
+        IListTodo.Output output = listTodo.execute(new IListTodo.Input(null));
         return output.todos();
     }
 }

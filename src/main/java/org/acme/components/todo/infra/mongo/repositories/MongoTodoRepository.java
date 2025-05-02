@@ -1,6 +1,5 @@
 package org.acme.components.todo.infra.mongo.repositories;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 

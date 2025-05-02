@@ -9,6 +9,7 @@ public interface IListTodo {
     Output execute(Input input);
 
     public record Input(
+        String filter
     ) {}
 
     public record Output(

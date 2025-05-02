@@ -33,8 +33,6 @@ public class MemoryTodoRepository implements ITodoRepository {
     @Override
     public List<Todo> getAll() {
         return todos;
-    };
-
-    
+    }
 
 }
